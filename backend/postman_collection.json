@@ -1,0 +1,48 @@
+{
+  "info": {
+    "name": "School Management API",
+    "_postman_id": "12345",
+    "description": "API for managing schools with location-based sorting",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "API Info",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/"
+      }
+    },
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Greenwood High School\",\n  \"address\": \"123 Park Avenue, New York\",\n  \"latitude\": 40.7128,\n  \"longitude\": -74.0060\n}"
+        },
+        "url": "http://localhost:3000/api/schools/add"
+      }
+    },
+    {
+      "name": "List Schools",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/schools/list?latitude=40.7128&longitude=-74.0060"
+      }
+    },
+    {
+      "name": "Get School by ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/schools/1"
+      }
+    }
+  ]
+}
