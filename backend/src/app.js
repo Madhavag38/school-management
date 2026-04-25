@@ -12,7 +12,7 @@ const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 100
 });
-app.use('/api/', limiter);
+app.use('/', limiter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use((req, res, next) => {
